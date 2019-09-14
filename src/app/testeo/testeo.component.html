@@ -1,0 +1,176 @@
+<app-header></app-header>
+<<<<<<< HEAD
+
+<div *ngIf="condicion; else nocondicion ">
+  <h1>soy admin</h1>
+</div>
+<ng-template #nocondicion>
+  <!-- aca saluda al usuario despues -->
+  <!-- <h1>soy usuario</h1> -->
+</ng-template>
+
+<!-- DISEÑO ENRIQUE START -->
+<div *ngIf="PublicacionesAdministrador; else loggedOut" class="container-fluid">
+  <h1 class="animated tada"><b><i>Nuestro Blog - Kmegavisión</i></b></h1>
+  <h3 class="text-xs-center animated swing">Siempre Brindandote La Mejor Información</h3><br><br>
+  <!-- empieza container fluid -->
+  <div class="fila">
+    <!-- empieza un contador de mi objeto json que me llega del servidor -->
+    <div *ngFor="let articulo of PublicacionesAdministrador; let i = index" class="columnas">
+      <h4>
+        {{articulo.titulo}}
+      </h4>
+      <!-- <h1>{{articulo.imagen | json}}</h1> -->
+
+       <cl-image [public-id]="articulo.imagen.id">
+        <cl-transformation width="400" height="400" gravity="face" radius="max" crop="crop">
+        </cl-transformation>
+        <cl-transformation width="200" crop="scale">
+        </cl-transformation>
+      </cl-image>
+      <p> {{articulo.articulo}} </p>
+      <b>
+        {{articulo.date | date:'medium'}}
+      </b><br>
+      <h1>aaaa</h1>
+      <h1>aaaa</h1>
+      <h1>aaaa</h1>
+      <h1>aaaa</h1>
+      <h1>aaaa</h1>
+      <b>{{"condicion"}}</b>
+      <div *ngIf="condicion">
+        <button class="btn btn-light mx-auto" (click)="borrar(articulo)">Borrar Articulo</button>
+      </div>
+    </div>
+    <!-- termina un contador de mi objeto json que me llega del servidor -->
+  </div><!-- fin de contador -->
+</div><!-- fin de if -->
+
+
+
+
+
+<br><br>
+<footer>
+  &copy;2019 Todos los derechos estan reservados por kmegavisión.
+
+
+</footer>
+
+
+
+
+
+
+
+<ng-template #loggedOut>
+  <h1>No hay publicaciones en el momento</h1>
+</ng-template>
+
+<!-- loading chimba -->
+
+<ngx-loading [show]="loading" [config]="{
+  animationType: ngxLoadingAnimationTypes.chasingDots,  
+=======
+
+<br>
+<br>
+<br>
+<<<<<<< HEAD
+
+<!-- DISEÑO ENRIQUE START -->
+<div *ngIf="PublicacionesAdministrador; else loggedOut" class="container-fluid">
+  <h1 class="animated tada"><b><i>Nuestro Blog - Kmegavisión</i></b></h1>
+  <h3 class="text-xs-center animated swing">Siempre Brindandote La Mejor Información</h3><br><br>
+  <!-- empieza container fluid -->
+  <div class="fila">
+    <!-- empieza un contador de mi objeto json que me llega del servidor -->
+    <div *ngFor="let item of PublicacionesAdministrador; let i = index" class="columnas">
+      <h4>
+        {{item.titulo}}
+      </h4>
+      <cl-image [public-id]="item.imagen.id">
+        <cl-transformation width="400" height="400" gravity="face" radius="max" crop="crop">
+        </cl-transformation>
+        <cl-transformation width="200" crop="scale">
+        </cl-transformation>
+      </cl-image>
+      <p> {{item.articulo}} </p>
+      <b>
+        {{item.date | date:'medium'}}
+      </b>
+=======
+<br>
+<!-- AQUI VAN LOS POST VISIBLES -->
+<h1>PRUEBA POSasdasdMN</h1>
+
+<div *ngIf="PublicacionesAdministrador; else loggedOut">
+        <p>mostrando publicaciones</p>
+        
+<div *ngFor="let item of PublicacionesAdministrador; let i = index">
+        <h1>{{item.titulo}}</h1>
+        <p>fecha de la publicacion</p> <br>
+        <b>{{item.date | date}}</b>
+        <br><br>
+        <div class="alert alert-success">
+            <b class="text-center"> Articulo Escrito</b> <br>
+    
+        </div>
+        <div class="card mx-auto" style="width: 18rem;">
+                <img [src]="item.imagen" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{item.articulo}}</p>
+                  <a href="#" class="btn btn-primary"></a>
+                </div>
+              </div>
+              <h1>link del video {{item.video}}</h1>
+              <iframe
+               width="560" 
+               height="315" 
+               [src]="item.video" 
+               frameborder="0" 
+              
+               allowfullscreen></iframe>
+             
+       
+    
+    
+>>>>>>> 5e90806c724a6a87c861f60c7bc468afc2911062
+    </div>
+    <!-- termina un contador de mi objeto json que me llega del servidor -->
+  </div><!-- fin de contador -->
+</div><!-- fin de if -->
+
+
+
+
+
+<br><br>
+<footer>
+  &copy;2019 Todos los derechos estan reservados por kmegavisión.
+
+
+</footer>
+
+
+
+
+
+
+
+<ng-template #loggedOut>
+  <h1>No hay publicaciones en el momento</h1>
+</ng-template>
+
+<!-- loading chimba -->
+
+<ngx-loading [show]="loading" [config]="{
+  animationType: ngxLoadingAnimationTypes.chasingDots,
+>>>>>>> 79e0b1af7d3ce84cdb25dfad661fae2e766002b6
+  primaryColour: primaryColour,
+  secondaryColour: secondaryColour,
+  fullScreenBackdrop: fullscreenloadingdecision,
+  backdropBorderRadius: radio,
+  backdropBackgroundColour: colorback
+}" [template]="loadingTemplate"></ngx-loading>
